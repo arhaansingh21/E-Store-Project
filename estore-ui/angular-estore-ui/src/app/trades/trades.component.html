@@ -1,0 +1,45 @@
+<div class="trade-card">
+  
+  <div *ngIf="login !== 'admin'" class="trade-add-box">
+        <h2>Create a Trade Offer!</h2>
+        <input id="new-product-name" #productName placeholder="Name" (keyup.enter)="productPrice.focus()">
+        <input id="new-product-price" type="number" #productPrice placeholder="Offer" (keyup.enter)="productQuantity.focus()">
+        <input id="new-product-quantity" type="number" #productQuantity placeholder="Quantity" (keyup.enter)="addTrade(productName.value, productPrice.value, productQuantity.value)">
+        <button type="button" class="add-button" (click)="addTrade(productName.value, productPrice.value, productQuantity.value)">
+        Submit
+        </button>
+  </div>
+
+  <div class="trade-offers">
+    <div class="trade-checkbox">
+      <input type="checkbox" [(ngModel)]="showEmpty" id="showempty" name="showempty">
+      <div class="title"><h2>View All Trade Offers</h2></div>
+    </div>
+
+    <div class="drop-down">
+      <ng-container *ngFor="let entry of trades | keyvalue">
+        <h2 *ngIf="(isValid(entry.key, entry.value) || this.showEmpty) 
+          && entry.key !== 'admin' 
+          && entry.value.length > 0
+          && this.login === 'admin'">Customer: {{entry.key}}
+        </h2>
+        <ul class="trades">
+          <ng-container *ngFor="let trade of entry.value" >
+            <li *ngIf="trade.status === 'PENDING' || this.showEmpty">
+              <button type="button">
+                <span class="badge">{{trade.product.name}} | </span>
+                <span class="price">Price: ${{trade.product.price}} | </span>
+                <span class="price">Quantity: {{trade.product.quantity}} | </span>
+                <span class="price">Status: {{trade.status}}</span>
+              </button>
+              <button *ngIf="trade.status === 'PENDING' && this.login !== 'admin'" type="button" class="delete" title="delete trade" (click)="cancelTrade(trade)">Cancel</button>
+              <button *ngIf="trade.status === 'PENDING' && this.login === 'admin'" type="button" class="delete" title="delete trade" (click)="denyTrade(entry.key, trade)">Deny</button>
+              <button *ngIf="trade.status === 'PENDING' && this.login === 'admin'" type="button" class="apply" title="approve trade" (click)="approveTrade(entry.key, trade)">Approve</button>
+            </li>
+          </ng-container>
+        </ul>
+      </ng-container>
+    </div>
+  </div>
+  
+</div>

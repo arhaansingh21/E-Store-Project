@@ -1,0 +1,9 @@
+<nav>
+    <div class="navbar" *ngIf="!(currentRoute === '/login' || currentRoute === '/register')">
+      <button *ngIf="!(login === 'admin')" routerLink="/customer" routerLink="/customer" class="navbtn"><fa-icon [icon]="['fas', 'bag-shopping']"></fa-icon></button>
+      <button *ngIf="!(login === 'admin')" routerLink="/cart" class="navbtn"><fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon></button>
+      <button *ngIf="(login === 'admin')" routerLink="/admin" class="navbtn">Inventory</button>
+      <button routerLink="/trades" class="navbtn">Trade-in</button>
+      <button (click)="logout()" class="navbtn"><fa-icon [icon]="['fas', 'right-from-bracket']"></fa-icon></button>
+    </div>
+</nav>

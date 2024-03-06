@@ -1,0 +1,18 @@
+<div *ngIf="login">
+<div class="user-page">
+  <input #searchBox id="search-box" [(ngModel)]="filter" (ngModelChange)="search()" placeholder="Search"/>
+  <div class="heading"><h2>Products</h2></div>
+  <ul class="products">
+    <ng-container *ngFor="let product of products">
+    <li *ngIf="product.quantity > 0">
+      <button type="button" (click)="addProduct(product, quantity.value)" style="margin-right: 1px;">
+        <span class="badge"><fa-icon [icon]="['fas', 'arrows-to-dot']" class="main-icon"></fa-icon>{{product.name}} | </span>
+        <span class="price">Price: ${{product.price}} | </span>
+        <span class="price">Stock: {{product.quantity}}</span>
+      </button>
+      <input type="number" #quantity id="quantity-box" placeholder="1" [defaultValue]="1" class="number-box" (keyup.enter)="addProduct(product, quantity.value)" />
+    </li>
+    </ng-container>
+  </ul>
+</div>
+<app-product-search></app-product-search>

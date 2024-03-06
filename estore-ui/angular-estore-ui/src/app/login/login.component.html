@@ -1,0 +1,12 @@
+<div class="login-box">
+    <div class="login">
+        <div class ="heading"><h1>Login</h1></div>
+        <div class="card">
+            <input id="login" [(ngModel)]="login" placeholder="Username" (keyup.enter)="attemptLogin(login)">
+        </div>
+        <button type="submit" class="login-btn" (click)="attemptLogin(login)"> Login </button>
+        <div class="register">
+            <a routerLink="/register">Don't have an account?</a>
+        </div>
+    </div>
+</div>

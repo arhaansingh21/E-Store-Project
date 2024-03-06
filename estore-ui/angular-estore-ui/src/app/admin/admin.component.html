@@ -1,0 +1,41 @@
+<div class="admin-view">
+  <h1>Admin Portal</h1>
+  <div *ngIf="login">
+  <div class="add-box">
+      <div class="title"><h2>Add a new product</h2></div>
+      <input id="new-product-name" class="add-input" #productName placeholder="Name" (keyup.enter)="productPrice.focus()">
+      <input id="new-product-price" class="add-input" type="number" #productPrice placeholder="Price" (keyup.enter)="productQuantity.focus()">
+      <input id="new-product-quantity" class="add-input" type="number" #productQuantity placeholder="Quantity" (keyup.enter)="add(productName.value, productPrice.value, productQuantity.value)">
+      <button type="button" class="add-btn" (click)="add(productName.value, productPrice.value, productQuantity.value)">Add </button>
+  </div>
+
+  <br>
+  <div class="search-box">
+  <div class="title"><h2>Modify an Existing Product</h2></div>
+  <input #searchBox id="search-box" [(ngModel)]="filter" (ngModelChange)="search()" placeholder="Search"/>
+  <br>
+  <ul class="products">
+    <li *ngFor="let product of products">
+      <button [class.selected] = "product == selectedProduct" type="button" (click)="onSelect(product)">
+        <span class="badge">{{product.name}} | </span>
+        <span class="price">Price: ${{product.price}} | </span>
+        <span class="price">Stock: {{product.quantity}}</span>
+      </button>
+      <button type="button" class="delete" title="delete product"
+        (click)="delete(product)">Remove</button>
+    </li>
+  </ul>
+  </div>
+  <br>
+  <div *ngIf="selectedProduct" class="add-box">
+      <h2>{{selectedProduct.name}}</h2>
+      <div class="price">
+        <label class="label-fixed-width" for="Product Price">Price: </label>
+        <input id="Product Price" #selectedPrice type="number" placeholder="Price" [(ngModel)]="selectedProduct.price" (keyup.enter)="selectedQuantity.focus()" />
+      </div>
+      <div class="price">
+        <br>
+        <label class="label-fixed-width" for="Product Quantity">Quantity: </label>
+        <input id="Product Quantity" #selectedQuantity placeholder="Quantity" type="number" [(ngModel)]="selectedProduct.quantity" (keyup.enter)="save(selectedProduct)">
+      </div>
+      <button type="button" (click)="save(selectedProduct)" class="apply">Apply</button>

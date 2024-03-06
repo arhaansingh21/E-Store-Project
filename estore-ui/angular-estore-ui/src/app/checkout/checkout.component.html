@@ -1,0 +1,24 @@
+<div class="checkout-card">
+  <div class="checkout-title"><h2> Cart </h2></div>
+  <div class="checkout-cart">
+    <ng-container *ngFor="let product of cartContents">
+      <ul class="cart">
+      <li *ngIf="product.quantity > 0 && product.price > 0">
+        <button type="button" style="margin-right: 1px;">
+          <span class="badge">{{product.name}} | </span>
+          <span class="price">Price: ${{product.price}} | </span>
+          <span class="price">Amount: {{product.quantity}}</span>
+        </button>
+        <button style="margin-right: 1px;" type="button" title="">Total Price: ${{product.price * product.quantity}} </button>
+      </li>
+      </ul>
+    </ng-container>
+  </div>
+
+  <div class="checkout-confirm">
+    <h2 *ngIf="this.getBalance() - this.total < 0">Total: ${{this.total}} - ${{this.getBalance()}} = ${{this.total - this.getBalance()}}</h2>
+    <h2 *ngIf="this.getBalance() === 0">Total: ${{this.total}}</h2>
+    <h2 *ngIf="this.getBalance() - this.total > 0">Total: $0</h2>
+    <button type="button" class="apply" (click)="removeItems()">Confirm Purchase</button>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="login-box">
+    <div class="login">
+        <div class ="heading"><h1>Register</h1></div>
+        <div class="card">
+            <input id="login" [(ngModel)]="login" placeholder="Username" (keyup.enter)="attemptRegister(login)">
+        </div>
+        <button type="submit" class="register-btn" (click)="attemptRegister(login)">Register</button>
+        <div class="register">
+            <a routerLink="/login">Already have an account?</a>
+</div>

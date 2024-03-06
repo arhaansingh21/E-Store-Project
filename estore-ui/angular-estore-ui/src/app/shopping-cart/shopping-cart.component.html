@@ -1,0 +1,18 @@
+<div class="shopping-cart ">
+  <div class="title"><h2>Shopping Cart</h2></div>
+  <ul class="cart">
+  <li *ngFor="let product of cartContents">
+    <button type="button" style="margin-right: 1px;">
+      <span class="badge">{{product.name}} | </span>
+      <span class="price">Price: ${{product.price}} | </span>
+      <span class="price">Amount: {{product.quantity}}</span>
+    </button>
+    <input style="margin-right: 1px;" type="number" #quantity id="quantity-box" placeholder="1" [(ngModel)]="product.quantity" class="number-box" (keyup.enter)="modify(product)" />
+    <button id="add-btn" style="margin-right: 1px;" type="button" class="btn" title=""
+      (click)="modify(product)"><fa-icon [icon]="['fas', 'check']" class="main-icon"></fa-icon></button>
+    <button style="margin-right: 1px;" type="button" id="remove-btn" class="btn" title="Remove from cart"
+        (click)="removeProduct(product)"><fa-icon [icon]="['fas', 'trash']" class="main-icon"></fa-icon></button>
+  </li>
+  </ul>
+  <button class="checkout-btn" *ngIf="!(login === 'admin')" routerLink="/checkout">Checkout</button>
+</div>

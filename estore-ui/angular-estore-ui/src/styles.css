@@ -1,0 +1,334 @@
+/* Global vars*/
+:root {
+    --opacity-change: 0.6;
+    --color1: #7D83FF;
+    --color2: #D4DCFF;
+    --color3: #003366;
+    --color4: #1AFFD5;
+    --color5: #590925;
+    --background-color: ivory;
+    --heading-font: 'Oswald', sans-serif;
+    --secondary-font: 'Nunito', sans-serif;
+    --transition-set: '350ms ease-in-out';
+    font-size: 16px;
+
+}
+/* Title Styling */
+.main-title {
+    display: flex;
+    margin-left: 2rem;
+    margin-right: auto;
+    background-color: var(--background-color);
+}
+/* Title Styling */
+.main-title .main-icon {
+    margin-top: 0.75rem;
+    margin-bottom: auto;
+    color: var(--color3);
+}
+/* Title Styling */
+.main-title h1 {
+    margin-left: 0.5rem;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    margin-bottom: auto;
+    color: var(--color3);
+}
+/* Login card  */
+.login-box {
+    box-shadow: 0.8rem 0.9rem 1.25rem rgba(0, 0, 0, 0.65);
+    border-radius: 1.25rem;
+    display: block;
+    margin: auto auto;
+    width: 30%;
+    background-color: var(--background-color);
+    height: 20rem;
+}
+/* login menu Styling */
+.login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20% 10%;
+}
+/* login text heading Styling */
+.login .heading {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+/* login register option Styling */
+.login .register {
+    margin-top: 1rem;
+    margin-bottom: auto;
+    align-self: flex-start;
+    margin-left: 3rem;
+    margin-right: auto;
+}
+/* login button Styling */
+.login .login-btn {
+    margin-top: 1rem;
+    margin-bottom: auto;
+    align-self: flex-start;
+    margin-left: 3rem;
+    margin-right: auto;
+}
+/* register button Styling */
+.login .register-btn {
+    margin-top: 1rem;
+    margin-bottom: auto;
+    align-self: flex-start;
+    margin-left: 3rem;
+    margin-right: auto;
+}
+/* login menu hover Styling */
+.login .register:hover {
+    opacity: var(--opacity-change);
+    transition: 600ms ease-in-out;
+}
+/* nav menu Styling */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: var(--color3);
+}
+/* nav menu button Styling */
+.navbar .navbtn {
+    border-radius: 0;
+    border: 0;
+}
+/* userpage Styling */
+.user-page {
+    margin-top: 3rem;
+    margin-bottom: auto;
+}
+/* userpage search box Styling */
+#search-box {
+    margin-left: 2rem;
+    margin-right: auto;
+    width: 75%;
+}
+
+/* userpage product list styling */
+.user-page li{
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+/* userpage headings styling */
+.user-page .heading h2{
+    margin-top: 2rem;
+    margin-bottom: auto;
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* shopping cart container styling */
+.shopping-cart {
+    margin-top: 3rem;
+    margin-bottom: auto;
+}
+
+/* shopping cart title styling */
+.shopping-cart .title {
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* shopping cart prdouct list styling */
+.shopping-cart li {
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+/* shopping cart button styling */
+.shopping-cart .btn {
+    padding: 1rem;
+    margin: 0.25rem;
+}
+
+/* shopping cart remove button styling */
+.shopping-cart #remove-btn {
+    background-color: var(--color5);
+}
+
+/* shopping cart remove button hover styling */
+.shopping-cart #remove-btn:hover {
+    opacity: var(--opacity-change);
+}
+
+/* shopping cart add button styling */
+.shopping-cart #add-btn {
+    color: var(--color4);
+}
+
+/* checkout button styling */
+.checkout-btn {
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* checkout container styling */
+.checkout-card {
+    margin-top: 3rem;
+    margin-bottom: auto;
+}
+
+/* checkout title styling */
+.checkout-card .checkout-title {
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* checkout prdouct list styling */
+.checkout-card li {
+    list-style: none;
+}
+
+/* checkout prdouct list hover styling */
+.checkout-card li:hover {
+    opacity: 1;
+}
+
+/* checkout text styling */
+.checkout-card .checkout-confirm {
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* admin add product styling */
+.admin-view .add-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 2rem;
+    margin-right: 50%;
+}
+/* admin search heading styling */
+.search-box h2 {
+    margin-left: 2rem;
+    margin-right: auto;
+}
+/* admin search box styling */
+.search-box li {
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+/* admin delete box styling */
+.search-box .delete {
+    margin-left: 0.5rem;
+    margin-right: auto;
+}
+
+/* admin main header box styling */
+.admin-view h1 {
+    margin-left: 2rem;
+    margin-right: auto;
+}
+
+/* trade add option boxes styling */
+.add-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+}
+/* trade add option boxes styling */
+.add-box .apply {
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+/* trade add option boxes styling */
+.trade-add-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: 2rem;
+    margin-top: 3rem;
+    margin-bottom: auto;
+    row-gap: 0.75rem;
+    width: 50%;
+    text-decoration: underline;
+}
+/* trade add button styling */
+.trade-add-box .add-button{
+    width: 30%;
+    margin: 1.25rem 0;
+    margin-right: auto;
+}
+
+/* trade checkbox styling */
+.trade-checkbox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    margin-left: 2rem;
+    margin-right: auto;
+}
+
+/* trade checkbox title styling */
+.trade-checkbox .title {
+    margin-top: 0.5rem;
+    margin-bottom: auto;
+}
+
+/* trade dropdown styling */
+.trade-card .drop-down li{
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: auto;
+}
+
+/* trade dropdown heading styling */
+.trade-card .drop-down h2 {
+    margin-left: 2.5rem;
+    margin-right: auto;
+}
+
+/* global styling of body */
+body {
+    font-family: var(--secondary-font);
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* global styling of headings */
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: var(--color3);
+}
+  
+/* global styling of links */
+a {
+    color: var(--color3);
+    text-decoration: none;
+}
+  
+/* global styling of buttons */
+input, button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color3);
+    border-radius: 0.75rem;
+    color: var(--color2);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-set);
+}
+  
+/* global styling of button hover */
+input:hover, button:hover {
+    opacity: var(--opacity-change);
+    transition: var(--transition-set);
+}
